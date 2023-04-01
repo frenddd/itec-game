@@ -272,7 +272,19 @@ MonoBehaviour:
   m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 252135661}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: Landed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -339,6 +351,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &252135661 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4648175588594844983, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
+  m_PrefabInstance: {fileID: 3521969163311585507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252135650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2962ef76c8470984f97267e1c000e162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &252135664
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1587,7 +1610,7 @@ PrefabInstance:
     - target: {fileID: 3521969163261595655, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 96fc80598cf08e4499beb14eaef044a1, type: 3}
+      objectReference: {fileID: 21300000, guid: c9b444959ddd59e43b86b19292b4ef85, type: 3}
     - target: {fileID: 4648175588594844983, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
       propertyPath: Speed
       value: 10
