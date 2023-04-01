@@ -6,10 +6,11 @@ public class playercontroller : MonoBehaviour
 {
     public CharacterController2D controller;
     public Animator animator;
-    public float Speed = 40f;
 
+    public float Speed = 40f;
     float horizontalMovement = 0f;
     bool jump = false;
+    bool dash=false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,11 @@ public class playercontroller : MonoBehaviour
             jump = true;
             animator.SetBool("jumping", true);
         }
+
+        if (Input.GetButtonDown("Dash"))
+        {
+            dash = true;
+        }
     }
 
     //opreste animatia de sarit
@@ -39,6 +45,13 @@ public class playercontroller : MonoBehaviour
     {
         controller.Move(horizontalMovement * Time.fixedDeltaTime, false, jump);
         jump = false;
-        
+        float a = horizontalMovement;
+        if (dash==true)
+            {
+            controller.Move(5 * horizontalMovement * Time.fixedDeltaTime, false, jump);
+        }
+        horizontalMovement = a;
+
+
     }
 }
