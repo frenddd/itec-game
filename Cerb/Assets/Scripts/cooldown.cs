@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class cooldown : MonoBehaviour
 {
-    public int time;
-    private int timeout;
+    public float time=3;
+    private float timeout=0;
 
     private void Update()
     {
+        if (Time.time > time) { 
         if(Input.GetButtonDown("dash"))
-        { }
+        {
+            timeout = Time.time + time;
+                Debug.Log("nu se mai poate");
+        }
+        }
     }
 }
