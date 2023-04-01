@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class playercontroller : MonoBehaviour
 {
     public CharacterController2D controller;
@@ -17,6 +19,10 @@ public class playercontroller : MonoBehaviour
     {
         
     }
+
+    
+
+
 
     // Update is called once per frame
     void Update()
