@@ -260,9 +260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c17de7094653446b6a9e8c23d0cdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 400
+  m_JumpForce: 170
   m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
+  m_MovementSmoothing: 0.12
   m_AirControl: 0
   m_WhatIsGround:
     serializedVersion: 2
@@ -318,6 +318,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.43185, y: 6.8378134}
   m_EdgeRadius: 0
+--- !u!95 &252135660
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252135650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3fb70158f80455e45828eb23db61c764, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844487454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.838, y: -0.618, z: 0.0149697205}
+  m_LocalPosition: {x: -1.36, y: -0.67, z: 0.0149697205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1129,6 +1150,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 3521969163261595648, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3521969163261595649, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1143,15 +1168,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3521969163261595654, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.07
+      value: 0.0681436
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521969163261595654, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0681436
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521969163261595654, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.97348
       objectReference: {fileID: 0}
     - target: {fileID: 3521969163261595654, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.744
+      value: -1.767
       objectReference: {fileID: 0}
     - target: {fileID: 3521969163261595654, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.876
+      value: -0.954
       objectReference: {fileID: 0}
     - target: {fileID: 3521969163261595654, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1191,8 +1224,12 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 96fc80598cf08e4499beb14eaef044a1, type: 3}
     - target: {fileID: 4648175588594844983, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
       propertyPath: Speed
-      value: 40
+      value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 4648175588594844983, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 252135660}
     - target: {fileID: 4648175588594844983, guid: 681aa5113f16da4489d86440f9a1aaa7, type: 3}
       propertyPath: m_Enabled
       value: 1
