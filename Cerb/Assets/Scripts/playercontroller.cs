@@ -13,7 +13,8 @@ public class playercontroller : MonoBehaviour
     float horizontalMovement = 0f;
     bool jump = false;
     bool dash=false;
-    float timer = 2f;
+    float timer = 3f;
+    bool ok = true;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +55,7 @@ public class playercontroller : MonoBehaviour
     {
         if (timer > 0)
         {
-            Debug.Log("scade");
+            Debug.Log(timer);
             timer -= Time.fixedDeltaTime;
         }
         else
@@ -62,24 +63,45 @@ public class playercontroller : MonoBehaviour
         {
             controller.Move(horizontalMovement / 5 * Time.fixedDeltaTime, false, jump);
             dash = false;
+            timer = 0;
+            ok = false;
+        }
+        
+    }
+
+    void coolup()
+    {   //se reincarca ablitatea
+        if (timer <= 3)
+        {
+            Debug.Log(timer);
+            timer += Time.fixedDeltaTime;
         }
 
+        
+
+        if( timer >= 3)
+        { 
+            timer = 3;
+            ok = true;
+        }
+        
     }
 
     void FixedUpdate()
     {
-        bool ok = false;
+        
         controller.Move(horizontalMovement * Time.fixedDeltaTime, false, jump);
         jump = false;
         
-        if (dash==true)
+        if (dash==true && ok==true)
         {
             controller.Move(5 * horizontalMovement * Time.fixedDeltaTime, false, jump);
-            
             cooldown();
         }
         
-
-
+        if(ok==false)
+        {
+            coolup();
+        }
     }
 }
