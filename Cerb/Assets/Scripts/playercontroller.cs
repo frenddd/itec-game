@@ -33,6 +33,8 @@ public class playercontroller : MonoBehaviour
         {
             dash = true;
         }
+        if (Input.GetButtonUp("Dash"))
+            dash = false;
     }
 
     //opreste animatia de sarit
@@ -43,14 +45,17 @@ public class playercontroller : MonoBehaviour
 
     void FixedUpdate()
     {
+        bool ok = false;
         controller.Move(horizontalMovement * Time.fixedDeltaTime, false, jump);
         jump = false;
-        float a = horizontalMovement;
+        
         if (dash==true)
-            {
+        {
             controller.Move(5 * horizontalMovement * Time.fixedDeltaTime, false, jump);
+            ok = true;
         }
-        horizontalMovement = a;
+        else if (ok==true)
+            controller.Move(horizontalMovement/5 * Time.fixedDeltaTime, false, jump);
 
 
     }
