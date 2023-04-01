@@ -37,6 +37,11 @@ public class playercontroller : MonoBehaviour
             animator.SetBool("jumping", true);
         }
 
+        if(Input.GetButtonDown("Reset"))
+        {
+
+        }
+
         if (Input.GetButtonDown("Dash"))
         {
             dash = true;
