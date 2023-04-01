@@ -25,14 +25,20 @@ public class playercontroller : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator.SetBool("jumping", true);
         }
+    }
 
-
+    //opreste animatia de sarit
+    public void Landed()
+    {
+        animator.SetBool("jumping", false);
     }
 
     void FixedUpdate()
     {
         controller.Move(horizontalMovement * Time.fixedDeltaTime, false, jump);
         jump = false;
+        
     }
 }
