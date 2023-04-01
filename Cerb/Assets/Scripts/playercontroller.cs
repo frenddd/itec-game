@@ -13,7 +13,7 @@ public class playercontroller : MonoBehaviour
     float horizontalMovement = 0f;
     bool jump = false;
     bool dash=false;
-    float timer = 3f;
+    float timer = 1;
     bool ok = true;
 
     // Start is called before the first frame update
@@ -55,7 +55,7 @@ public class playercontroller : MonoBehaviour
     {
         if (timer > 0)
         {
-            Debug.Log(timer);
+            
             timer -= Time.fixedDeltaTime;
         }
         else
@@ -73,15 +73,15 @@ public class playercontroller : MonoBehaviour
     {   //se reincarca ablitatea
         if (timer <= 3)
         {
-            Debug.Log(timer);
+            
             timer += Time.fixedDeltaTime;
         }
 
         
 
         if( timer >= 3)
-        { 
-            timer = 3;
+        {
+            timer = 1;
             ok = true;
         }
         
