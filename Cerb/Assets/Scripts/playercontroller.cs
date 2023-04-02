@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 
 public class playercontroller : MonoBehaviour
@@ -37,10 +37,13 @@ public class playercontroller : MonoBehaviour
             animator.SetBool("jumping", true);
         }
 
-        if(Input.GetButtonDown("Reset"))
-        {
+        if(Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
 
-        }
+        if (Input.GetKeyDown(KeyCode.Q))
+            Application.Quit();
+        
 
         if (Input.GetButtonDown("Dash"))
         {
